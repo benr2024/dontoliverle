@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DonToliverdle</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+		<div class="topRow">
+		  <div id="timer" class="timer">Next song in: --:--:--</div>
+		  <button id="infoBtn" class="infoBtn" aria-label="Info">i</button>
+		</div>
+      <h1>DonToliverdle</h1>
+      <p class="sub">Guess today’s Don Toliver song.</p>
+    </header>
+
+    <section class="panel">
+      <label class="label" for="guessInput">Type a song</label>
+      <div class="inputRow">
+        <input id="guessInput" autocomplete="off" placeholder="Start typing..." />
+        <button id="guessBtn">Guess</button>
+      </div>
+      <div id="suggestions" class="suggestions"></div>
+      <div id="status" class="status"></div>
+	  	<button id="shareBtn" class="shareBtn hidden">Share</button>
+    </section>
+
+    <section class="gridWrap">
+      <div class="gridHeader">
+        <div>Song</div>
+        <div>Album</div>
+        <div>Year</div>
+        <div>TrackNo</div>
+        <div>Length</div>
+        <div>Features</div>
+      </div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <footer class="footer">
+      <small>Local demo • Progress saved per day in your browser</small>
+    </footer>
+  </div>
+  
+  <div id="modalOverlay" class="modalOverlay hidden"></div>
+
+  <div id="infoModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modalHeader">
+      <h2>How to play</h2>
+      <button id="closeModal" class="closeBtn">✕</button>
+    </div>
+    <div class="modalBody">
+      <p>Guess today’s Don Toliver song in 8 tries.</p>
+      <ul>
+        <li><b>Album</b>: ✅ if correct, ❌ if not.</li>
+        <li><b>Year</b>: ✅ correct year, ↑ answer is later, ↓ answer is earlier.</li>
+        <li><b>TrackNo</b>: ✅ correct Track number, ↑ answer is higher, ↓ answer is lower.</li>
+        <li><b>Length</b>: ✅ correct song length, ↑ song is longer, ↓ song is shorter.</li>
+      </ul>
+      <p>Your progress saves automatically for the day.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

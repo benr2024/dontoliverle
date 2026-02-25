@@ -1,0 +1,1 @@
+{"resources":{"Scripts/Script-1.sql":{"default-datasource":"mysql8-19c85cbb74a-6817331105147487"},"Scripts/Script-2.sql":{"default-datasource":"mysql8-19c85cbb74a-6817331105147487","default-catalog":"spotifydata"},"Scripts/Script.sql":{"default-datasource":"mysql8-19c85cbb74a-6817331105147487"}}}

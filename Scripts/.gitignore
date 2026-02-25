@@ -1,0 +1,16 @@
+target/
+*.log
+*.class
+*.jar
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config
+application-local.properties
