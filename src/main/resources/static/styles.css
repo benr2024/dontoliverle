@@ -232,3 +232,76 @@ button:hover { filter: brightness(1.08); }
 .up, .down { background: rgba(217, 119, 6, 0.20); border-color: rgba(217, 119, 6, 0.35); }
 
 .footer { margin-top: 14px; color: var(--muted); text-align: center; }
+
+/* --- Mobile fixes --- */
+@media (max-width: 720px) {
+  .container {
+    padding: 14px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  /* Input + button stack nicely */
+  .inputRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  /* Grid becomes readable cards */
+  .gridHeader {
+    display: none;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  /* Optional: make badges align better */
+  .badge {
+    width: fit-content;
+    min-height: 34px;
+  }
+
+  /* Keep title row tidy */
+  .sugRow {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .sugTitle {
+    font-size: 14px;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  /* Prevent long text from blowing up layout */
+  input,
+  .cellTitle,
+  .status,
+  .modalBody {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Slightly tighter for very small phones */
+@media (max-width: 420px) {
+  .panel, .gridWrap {
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  input {
+    padding: 11px;
+  }
+}
