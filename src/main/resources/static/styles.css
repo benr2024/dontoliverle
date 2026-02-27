@@ -232,21 +232,3 @@ button:hover { filter: brightness(1.08); }
 .up, .down { background: rgba(217, 119, 6, 0.20); border-color: rgba(217, 119, 6, 0.35); }
 
 .footer { margin-top: 14px; color: var(--muted); text-align: center; }
-
-@media (max-width: 520px) {
-  /* Stack the row into 2 lines: song spans full width, then 5 hint cells */
-  .row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-  }
-
-  /* Make the first cell (Song) span across all columns */
-  .row > div:first-child {
-    grid-column: 1 / -1;
-  }
-
-  /* Make text a bit smaller so it fits nicer */
-  .cellTitle { font-size: 14px; }
-  .meta { font-size: 12px; }
-}
