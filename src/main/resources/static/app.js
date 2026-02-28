@@ -102,9 +102,9 @@ function hintBadge(type, display) {
 }
 
 function renderCompareBadge(code, displayValue) {
-  if (code === "EQ") return hintBadge("eq", `${displayValue ?? "—"} ✅`);
-  if (code === "UP") return hintBadge("up", `${displayValue ?? "—"} ↑`);
-  if (code === "DOWN") return hintBadge("down", `${displayValue ?? "—"} ↓`);
+	if (code === "EQ") return hintBadge("eq", `${displayValue ?? "—"}`);
+	if (code === "UP") return hintBadge("up", `${displayValue ?? "—"}↑`);
+	if (code === "DOWN") return hintBadge("down", `${displayValue ?? "—"}↓`);
   return hintBadge("up", "—");
 }
 
