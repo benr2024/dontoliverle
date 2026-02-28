@@ -343,15 +343,56 @@ button:hover {
     padding: 10px;
   }
 
-  .gridHeader,
-  .row {
-    grid-template-columns:
-      1.5fr
-      1fr
-      0.5fr
-      0.5fr
-      0.6fr
-      0.8fr;
+  @media (max-width: 600px) {
+
+    .container {
+      padding: 12px;
+    }
+
+    .header h1 {
+      font-size: 22px;
+    }
+
+    .panel,
+    .gridWrap {
+      padding: 10px;
+    }
+
+    .gridHeader,
+    .row {
+      grid-template-columns:
+        1.2fr   /* Song (slightly smaller) */
+        0.9fr   /* Album */
+        0.7fr   /* Year (wider so 2021 fits) */
+        0.6fr   /* Track */
+        0.7fr   /* Length */
+        1fr;    /* Features (biggest space) */
+      gap: 6px;
+      font-size: 11px;
+    }
+
+    .badge {
+      min-height: 26px;
+      padding: 4px 8px;
+      font-size: 11px;
+    }
+
+    .albumThumb,
+    .sugImg {
+      width: 24px;
+      height: 24px;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+  }
     gap: 6px;
     font-size: 11px;
   }
