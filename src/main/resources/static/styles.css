@@ -39,6 +39,7 @@ body {
 .inputRow {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;      /* allows wrapping on small screens */
 }
 
 input {
@@ -141,6 +142,32 @@ button:hover { filter: brightness(1.08); }
   border: 1px solid var(--border);
   padding: 6px 10px;
   font-weight: 650;
+}
+
+/* Fix input overflow */
+.inputRow input {
+  min-width: 0;
+}
+
+/* Allow horizontal scroll for grid */
+.gridWrap {
+  overflow-x: auto;
+}
+
+.gridHeader, .row {
+  min-width: 750px;
+}
+
+.gridHeader, .row {
+  display: grid;
+  grid-template-columns: 2.2fr 1.4fr 0.6fr 0.7fr 0.9fr 1.2fr;
+}
+
+.row div,
+.gridHeader div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .topRow {
