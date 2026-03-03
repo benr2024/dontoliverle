@@ -48,7 +48,6 @@ function buildShareText() {
     const h = g.hints;
     return [
       hintToEmoji(h.album),
-      hintToEmoji(h.year),
       hintToEmoji(h.trackNumber),
       hintToEmoji(h.duration)
     ].join(" ");
@@ -199,9 +198,6 @@ function renderRow(resp) {
   albumCell.appendChild(img);
   albumCell.appendChild(badge);
 
-  const yearCell = document.createElement("div");
-  yearCell.appendChild(renderCompareBadge(hints.year, guess.releaseYear));
-
   const numCell = document.createElement("div");
   numCell.appendChild(renderCompareBadge(hints.trackNumber, guess.trackNumber));
 
@@ -214,7 +210,6 @@ function renderRow(resp) {
 
   row.appendChild(songCell);
   row.appendChild(albumCell);
-  row.appendChild(yearCell);
   row.appendChild(numCell);
   row.appendChild(lenCell);
   row.appendChild(featCell);
