@@ -108,6 +108,13 @@ function renderCompareBadge(code, displayValue) {
   return hintBadge("up", "—");
 }
 
+function renderFeaturesBadge(code, overlapText) {
+  if (code === "EQ") return hintBadge("eq", code, overlapText ? `✅ ${overlapText}` : "✅");
+  if (code === "PART") return hintBadge("up", code, overlapText ? `🟧 ${overlapText}` : "🟧 partial");
+  if (code === "NO") return hintBadge("no", code, "❌ none");
+  return hintBadge("up", "NA", "—");
+}
+
 function clearSuggestions() {
   suggBox.style.display = "none";
   suggBox.innerHTML = "";
@@ -210,7 +217,7 @@ function renderRow(resp) {
 
   // Features placeholder for now (we’ll wire Spotify later)
   const featCell = document.createElement("div");
-  featCell.appendChild(hintBadge("up", "—"));
+  featCell.appendChild(renderFeaturesBadge(hints.features, resp.featuresOverlap));
 
   row.appendChild(songCell);
   row.appendChild(albumCell);
