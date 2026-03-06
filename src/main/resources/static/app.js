@@ -113,21 +113,21 @@ function renderFeaturesBadge(code, overlapText, guessFeatures) {
 
   if (code === "EQ" && !guessFeatures) {
     // both had no features
-    return hintBadge("eq", "✅ none");
+    return hintBadge("eq", "none");
   }
   if (code === "EQ") {
     // exact feature match
-    return hintBadge("eq", `✅ ${guessLabel}`);
+    return hintBadge("eq", `${guessLabel}`);
   }
   if (code === "PART") {
     // partial overlap — show guess features with yellow border
-    return hintBadge("up", `🟧 ${guessLabel}`);
+    return hintBadge("up", `${guessLabel}`);
   }
   if (code === "NO") {
     // no overlap — show what they guessed
-    return hintBadge("no", guessLabel ? `❌ ${guessLabel}` : "❌ none");
+    return hintBadge("no", guessLabel ? ` ${guessLabel}` : "none");
   }
-  return hintBadge("no", guessLabel ? `❌ ${guessLabel}` : "—");
+  return hintBadge("no", guessLabel ? ` ${guessLabel}` : "—");
 }
 }
 
