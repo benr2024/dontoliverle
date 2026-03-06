@@ -112,23 +112,19 @@ function renderFeaturesBadge(code, overlapText, guessFeatures) {
   const guessLabel = guessFeatures ? guessFeatures : null;
 
   if (code === "EQ" && !guessFeatures) {
-    // both had no features
     return hintBadge("eq", "✅ none");
   }
   if (code === "EQ") {
-    // exact feature match
     return hintBadge("eq", `✅ ${guessLabel}`);
   }
   if (code === "PART") {
-    // partial overlap — show guess features with yellow border
     return hintBadge("up", `🟧 ${guessLabel}`);
   }
   if (code === "NO") {
-    // no overlap — show what they guessed
     return hintBadge("no", guessLabel ? `❌ ${guessLabel}` : "❌ none");
   }
+  // fallback: guess has features but answer has none (or vice versa)
   return hintBadge("no", guessLabel ? `❌ ${guessLabel}` : "—");
-}
 }
 
 function clearSuggestions() {
@@ -233,8 +229,8 @@ function renderRow(resp) {
 
   // Features placeholder for now (we’ll wire Spotify later)
   const featCell = document.createElement("div");
-  featCell.appendChild(renderFeaturesBadge(hints.features, resp.featuresOverlap, resp.guess.features));
-  
+  featCell.appendChild(renderFeaturesBadge(hints.features, resp.guess.features));
+
   row.appendChild(songCell);
   row.appendChild(albumCell);
   row.appendChild(yearCell);
