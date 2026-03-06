@@ -21,7 +21,7 @@ public class HintService {
     public Map<String, String> makeHints(TrackRow guess, TrackRow answer) {
         Map<String, String> hints = new LinkedHashMap<>();
 
-        hints.put("album", safeEq(guess.albumId, answer.albumId) ? "EQ" : "NO");
+        hints.put("album", safeEq(guess.albumName, answer.albumName) ? "EQ" : "NO");
         hints.put("year", compareInts(guess.releaseYear, answer.releaseYear));
         hints.put("trackNumber", compareInts(guess.trackNumber, answer.trackNumber));
         hints.put("duration", compareInts(guess.durationMs, answer.durationMs));
@@ -36,19 +36,18 @@ public class HintService {
         Set<String> g = normalizeFeatures(guessFeatures);
         Set<String> a = normalizeFeatures(answerFeatures);
 
-        if (g.isEmpty() || a.isEmpty()) return new FeatureHint("NA", "");
+        // Both empty = both have no features = correct match
+        if (g.isEmpty() && a.isEmpty()) return new FeatureHint("EQ", "");
+
+        // One has features, the other doesn't = no overlap possible
+        if (g.isEmpty() || a.isEmpty()) return new FeatureHint("NO", "");
 
         Set<String> overlap = new LinkedHashSet<>(g);
         overlap.retainAll(a);
-
         if (overlap.isEmpty()) return new FeatureHint("NO", "");
-
         if (overlap.size() == g.size() && overlap.size() == a.size()) {
-            // exact same set
             return new FeatureHint("EQ", String.join(", ", overlap));
         }
-
-        // partial overlap
         return new FeatureHint("PART", String.join(", ", overlap));
     }
 

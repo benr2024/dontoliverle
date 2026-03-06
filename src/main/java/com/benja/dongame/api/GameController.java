@@ -97,7 +97,8 @@ public class GameController {
                 "albumName", a.albumName,
                 "releaseYear", a.releaseYear,
                 "trackNumber", a.trackNumber,
-                "durationMs", a.durationMs
+                "durationMs", a.durationMs,
+                "Features", a.features
         ));
     }
     

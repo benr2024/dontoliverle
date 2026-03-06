@@ -109,10 +109,10 @@ function renderCompareBadge(code, displayValue) {
 }
 
 function renderFeaturesBadge(code, overlapText) {
-  if (code === "EQ") return hintBadge("eq", code, overlapText ? `✅ ${overlapText}` : "✅");
-  if (code === "PART") return hintBadge("up", code, overlapText ? `🟧 ${overlapText}` : "🟧 partial");
-  if (code === "NO") return hintBadge("no", code, "❌ none");
-  return hintBadge("up", "NA", "—");
+  if (code === "EQ") return hintBadge("eq", overlapText ? `✅ ${overlapText}` : "✅");
+  if (code === "PART") return hintBadge("up", overlapText ? `🟧 ${overlapText}` : "🟧 partial");
+  if (code === "NO") return hintBadge("no", "❌ none");
+  return hintBadge("no", "—");
 }
 
 function clearSuggestions() {
