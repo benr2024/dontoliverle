@@ -172,11 +172,12 @@ button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 36px;
+  min-height: 42px;
   border-radius: 10px;
   border: 1px solid var(--border);
-  padding: 6px 10px;
+  padding: 8px 14px;
   font-weight: 650;
+  font-size: 14px;
 }
 
 /* Album + Images */
@@ -325,8 +326,8 @@ button:hover {
 }
 
 /* ======================== */
-/* Mobile Optimization */
-/* ========================= */
+/* Mobile Optimization      */
+/* ======================== */
 
 @media (max-width: 600px) {
 
@@ -343,57 +344,20 @@ button:hover {
     padding: 10px;
   }
 
-  @media (max-width: 600px) {
-
-    .container {
-      padding: 12px;
-    }
-
-    .header h1 {
-      font-size: 22px;
-    }
-
-    .panel,
-    .gridWrap {
-      padding: 10px;
-    }
-
-    .gridHeader,
-    .row {
-      grid-template-columns:
-        1.2fr   /* Song (slightly smaller) */
-        0.9fr   /* Album */
-        0.7fr   /* Year (wider so 2021 fits) */
-        0.6fr   /* Track */
-        0.7fr   /* Length */
-        1fr;    /* Features (biggest space) */
-      gap: 6px;
-      font-size: 11px;
-    }
-
-    .badge {
-      min-height: 26px;
-      padding: 4px 8px;
-      font-size: 11px;
-    }
-
-    .albumThumb,
-    .sugImg {
-      width: 24px;
-      height: 24px;
-    }
-
-    input {
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    button {
-      padding: 8px 10px;
-      font-size: 14px;
-    }
-  }
+  .gridHeader,
+  .row {
+    grid-template-columns:
+      1.2fr
+      0.9fr
+      0.7fr
+      0.6fr
+      0.7fr
+      1fr;
     gap: 6px;
+    font-size: 11px;
+  }
+
+  .cellTitle {
     font-size: 11px;
   }
 
