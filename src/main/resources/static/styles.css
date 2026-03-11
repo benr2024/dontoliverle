@@ -130,11 +130,9 @@ button:hover {
 
 .gridHeader,
 .row {
-  display: grid;
-  grid-template-columns: 2.2fr 1.4fr 0.6fr 0.7fr 0.9fr 1.2fr;
-  gap: 10px;
-  align-items: center;
+  grid-template-columns: 1.8fr 1.2fr 0.5fr 0.6fr 0.8fr 1.4fr;
 }
+
 
 .gridHeader {
   color: var(--muted);
@@ -189,12 +187,8 @@ button:hover {
 }
 
 .albumThumb {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  object-fit: cover;
-  border: 1px solid var(--border);
-  background: #0b0b0f;
+  width: 44px;
+  height: 44px;
 }
 
 .sugRow {
