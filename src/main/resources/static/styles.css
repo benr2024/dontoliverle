@@ -130,9 +130,11 @@ button:hover {
 
 .gridHeader,
 .row {
-  grid-template-columns: 1.8fr 1.2fr 0.5fr 0.6fr 0.8fr 1.4fr;
+  display: grid;
+  grid-template-columns: 2.2fr 1.4fr 0.6fr 0.7fr 0.9fr 1.2fr;
+  gap: 10px;
+  align-items: center;
 }
-
 
 .gridHeader {
   color: var(--muted);
@@ -166,16 +168,17 @@ button:hover {
   font-weight: 650;
 }
 
+/* Desktop: bigger badges and album art */
 .badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
+  min-height: 44px;
   border-radius: 10px;
   border: 1px solid var(--border);
   padding: 8px 14px;
-  font-weight: 650;
   font-size: 14px;
+  font-weight: 650;
 }
 
 /* Album + Images */
@@ -186,9 +189,14 @@ button:hover {
   gap: 10px;
 }
 
+/* Desktop: bigger album art */
 .albumThumb {
   width: 44px;
   height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: #0b0b0f;
 }
 
 .sugRow {
