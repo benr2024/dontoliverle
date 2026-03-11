@@ -108,22 +108,13 @@ function renderCompareBadge(code, displayValue) {
   return hintBadge("up", "—");
 }
 
-function renderFeaturesBadge(code, overlapText, guessFeatures) {
-  const guessLabel = guessFeatures ? guessFeatures : null;
+function renderFeaturesBadge(code, guessFeatures) {
+  const guessLabel = guessFeatures && guessFeatures.trim() ? guessFeatures.trim() : null;
 
-  if (code === "EQ" && !guessFeatures) {
-    return hintBadge("eq", "✅ none");
-  }
-  if (code === "EQ") {
-    return hintBadge("eq", `✅ ${guessLabel}`);
-  }
-  if (code === "PART") {
-    return hintBadge("up", `🟧 ${guessLabel}`);
-  }
-  if (code === "NO") {
-    return hintBadge("no", guessLabel ? `❌ ${guessLabel}` : "❌ none");
-  }
-  // fallback: guess has features but answer has none (or vice versa)
+  if (code === "EQ" && !guessLabel) return hintBadge("eq", "None");
+  if (code === "EQ") return hintBadge("eq", `✅ ${guessLabel}`);
+  if (code === "PART") return hintBadge("up", `🟧 ${guessLabel}`);
+  if (code === "NO") return hintBadge("no", guessLabel ? `❌ ${guessLabel}` : "None");
   return hintBadge("no", guessLabel ? `❌ ${guessLabel}` : "—");
 }
 
